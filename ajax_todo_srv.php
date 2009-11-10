@@ -13,6 +13,7 @@ switch ($_GET['action']) {
         }
         $tpl = new TemplateService;
         $tpl->todo_list = TodoMapper::getTodoList($project_id);
+        $tpl->project_id = $project_id;
         echo $tpl->display('todo_list.php');
         break;
 

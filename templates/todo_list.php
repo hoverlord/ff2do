@@ -14,10 +14,10 @@ foreach($template->todo_list as $todo) {
 <script type="text/javascript">
     new Ajax.InPlaceEditor(
         'insert_item', 
-        'ajax_todo_srv.php?action=insert_item&project_id=<?php echo $project_id; ?>', {
+        'ajax_todo_srv.php?action=insert_item&project_id=<?php echo $template->project_id; ?>', {
             submitOnBlur: true,
             onComplete: function(){
-                loadList(<?php echo $project_id; ?>);
+                loadList(<?php echo $template->project_id; ?>);
                 new Effect.Highlight('listContainer',{})
             }
         }
