@@ -5,7 +5,13 @@ class TemplateService {
     private $template_dir;
     
     function __construct(){
-        $this->template_dir = '/Library/Webserver/Documents/dev_2do/templates/';
+        $INSTALL_PATH = dirname(__FILE__);
+            if (empty($INSTALL_PATH)) {
+                $INSTALL_PATH = './';
+            } else {
+                $INSTALL_PATH .= '/';
+            }
+        $this->template_dir = $INSTALL_PATH . '/../../templates/';
     }
     
     function display($file) {
