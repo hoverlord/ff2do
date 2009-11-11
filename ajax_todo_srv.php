@@ -52,5 +52,9 @@ switch ($_GET['action']) {
         TodoMapper::deleteTodo(str_replace('delete_item_', '', $_POST['id']));
         break;
     
+    case 'archive_item':
+        TodoMapper::archiveTodo(str_replace('archive_item_', '', $_POST['id']));
+        break;
+        
 }
 ?>

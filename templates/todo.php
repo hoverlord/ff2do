@@ -12,7 +12,7 @@ if ($template->todo->todo_text != '') {
 ?>
 </p>
 <p>
-  <input type="checkbox" id="<?php echo $template->todo->todo_id; ?>" onChange="archiveItem(this.id)"> erledigt
+  <input type="checkbox" id="archive_item_<?php echo $template->todo->todo_id; ?>" onChange="archiveItem(this.id, <?php echo $template->todo->project_id; ?>)"<?php if ($template->todo->todo_archived == 1) {echo ' checked';}?>> erledigt
   <input type="button" value="l&ouml;schen" class="delete_button" id="delete_item_<?php echo $template->todo->todo_id; ?>" onclick="delete_item(this.id, <?php echo $template->todo->project_id; ?>)" />
 </p>
 <script type="text/javascript">

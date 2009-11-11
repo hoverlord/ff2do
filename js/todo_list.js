@@ -84,12 +84,23 @@ delete_item = function(id, project_id) {
     );
 }
 
-archiveItem = function(id) {
-    new Effect.Fade(
-        'todo_viewer', {
-            duration: 0.2
+archiveItem = function(id, project_id) {
+var params = 'id='+id;
+    var url = 'ajax_todo_srv.php?action=archive_item';
+    var ajax = new Ajax.Request(
+        url, {
+            method: 'post',
+			parameters: params,
+			onComplete: function(){
+				loadList(project_id);
+				new Effect.Fade(
+				    'todo_viewer', {
+				        duration: 0.2
+				    }
+				);
+			}
         }
-    )
+    );
 }
 
 loadProjects = function() {

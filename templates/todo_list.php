@@ -6,7 +6,15 @@ foreach($template->todo_list as $todo) {
     $project_id = $todo->project_id;
 ?>
 <div id="item_<?php echo $todo->todo_id; ?>" class="todo_item" onclick="getItem(this.id)">
-<?php echo utf8_decode($todo->todo_name); ?>
+<?php
+if ($todo->todo_archived == 1) {
+    echo '<s>';
+}
+echo utf8_decode($todo->todo_name);
+if ($todo->todo_archived == 1) {
+    echo '</s>';
+}
+?>
 </div>
 <?php
 }
