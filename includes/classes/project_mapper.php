@@ -48,6 +48,13 @@ class ProjectMapper {
         $sql = 'DELETE FROM todos WHERE project_id = "' . (int)$project_id . '"';
         $db_link->exec($sql);
     }
+    
+    public function getFirstProjectId() {
+        $db_link = new Database();
+        $sql = 'SELECT project_id FROM projects ORDER BY project_sort_order ASC LIMIT 0,1';
+        $project_id = $db_link->query($sql)->fetch()->project_id;
+        return $project_id;
+    }
 
 }
 ?>

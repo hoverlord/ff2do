@@ -2,15 +2,17 @@
 
 require_once('includes/config.php');
 require_once('includes/classes/todo_mapper.php');
+require_once('includes/classes/project_mapper.php');
 require_once('includes/classes/template_service.php');
 
 switch ($_GET['action']) {
         
     case 'get_list':
-        if (isset($_GET['project_id'])) {
+        if (isset($_GET['project_id']) and ($_GET['project_id'] != 'undefined')) {
             $project_id = (int)str_replace('project_', '', $_GET['project_id']);
         } else {
-            $project_id = false;
+            $project = new ProjectMapper;
+            $project_id = $project->getFirstProjectId();
         }
         $tpl = new TemplateService;
         $tpl->todo_list = TodoMapper::getTodoList($project_id);

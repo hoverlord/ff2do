@@ -4,13 +4,9 @@ require_once('includes/classes/database.php');
 
 class TodoMapper {
 
-    public function getTodoList($project_id = false) {
+    public function getTodoList($project_id) {
         $db_link = new Database();
-        if ($project_id) {
-            $sql = 'SELECT todo_name, todo_id, todo_archived, project_id FROM todos WHERE project_id = "' . $project_id . '" ORDER BY todo_sort_order';
-        } else {
-            $sql = 'SELECT t.todo_name, t.todo_id, t.todo_archived, t.project_id FROM todos t, projects p WHERE project_sort_order = "1" AND t.project_id = p.project_id ORDER BY todo_sort_order';
-        }
+        $sql = 'SELECT todo_name, todo_id, todo_archived, project_id FROM todos WHERE project_id = "' . $project_id . '" ORDER BY todo_sort_order';
         $list = $db_link->query($sql)->fetchAll();
         return $list;
     }
