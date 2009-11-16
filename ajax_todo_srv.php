@@ -46,7 +46,9 @@ switch ($_GET['action']) {
         break;
 
     case 'insert_item':
-        TodoMapper::setTodo($_POST['value'], $_GET['project_id']);
+        if ($_POST['value'] != '' AND $_POST['value'] != 'Neuer Eintrag') {
+            TodoMapper::setTodo($_POST['value'], $_GET['project_id']);
+        }
         echo 'Neuer Eintrag';
         break;
 
