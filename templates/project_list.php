@@ -3,7 +3,9 @@
     new Ajax.InPlaceEditor(
         'insert_project', 
         'ajax_project_srv.php?action=insert_project', {
-            submitOnBlur: true,
+            submitOnBlur: false,
+            okControl: "button",
+            cancelControl: false,
             onComplete: function(){
                 loadProjects();
                     new Effect.Highlight('projectContainer',{})
