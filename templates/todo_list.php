@@ -23,7 +23,9 @@ if ($todo->todo_archived == 1) {
     new Ajax.InPlaceEditor(
         'insert_item', 
         'ajax_todo_srv.php?action=insert_item&project_id=<?php echo $template->project_id; ?>', {
-            submitOnBlur: true,
+            submitOnBlur: false,
+            okControl: "button",
+            cancelControl: false,
             onComplete: function(){
                 loadList(<?php echo $template->project_id; ?>);
                 new Effect.Highlight('listContainer',{})
