@@ -13,6 +13,7 @@ CREATE TABLE `todos` (
   `todo_id` int(11) NOT NULL auto_increment,
   `todo_name` varchar(128) NOT NULL default 'untitled',
   `todo_text` text,
+  `todo_archived` smallint(1) NOT NULL default '0',
   `project_id` int(11) NOT NULL default '0',
   `todo_sort_order` int(11) NOT NULL default '0',
   PRIMARY KEY  (`todo_id`)
