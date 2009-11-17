@@ -1,85 +1,84 @@
 * {
-  margin: 0px;
-  padding: 0px;
+margin:0;
+padding:0;
 }
 
 body {
-  font-family: Verdana, Arial, sans-serif;
-  font-size: 0.9em;
-  line-height: 1.4em;
+font-family:Verdana, Arial, sans-serif;
+font-size:0.9em;
+line-height:1.4em;
 }
 
 #page_wrapper {
-  width: 47.5em;
-  margin: auto;
-  margin-top: 5em;
+width:47.5em;
+margin:5em auto auto;
 }
 
 #projectContainer {
-  float: left;
-  width: 12.5em;
+float:left;
+width:12.5em;
 }
 
 #listContainer {
-  float: left;
-  width: 12.5em;
-  overflow: auto;
+float:left;
+width:12.5em;
+overflow:auto;
 }
 
 #viewer_container {
-  float: left;
-  width: 22.5em;
+float:left;
+width:22.5em;
 }
 
 .todo_item {
-  border-bottom: 1px solid #DDD;
-  background-color: white;
-  margin: 0.3em;
-  cursor: move;
+border-bottom:1px solid #DDD;
+background-color:#FFF;
+cursor:move;
+margin:0.3em;
 }
 
 .todo_detail {
-  border: 1px solid silver;
-  background-color: white;
-  padding: 0.3em;
-  margin: 0.3em;
+border:1px solid silver;
+background-color:#FFF;
+margin:0.3em;
+padding:0.3em;
 }
 
 .add_button {
-  font-size: 0.8em;
-  font-weight: bold;
-  padding: 0.3em;
-  margin: 0.3em;
-  border-bottom: 1px solid #DDD;
+font-size:0.8em;
+font-weight:700;
+border-bottom:1px solid #DDD;
+margin:0.3em;
+padding:0.3em;
 }
 
 #listContainer .todo_item {
-  font-size: 0.9em;
+font-size:0.9em;
 }
 
 .inplaceeditor-form .editor_field {
-  font-size: 1em;
+font-size:1em;
 }
 
 .inplaceeditor-form a {
-  margin-left: 0.5em;
-  font-size: 0.7em;
+margin-left:0.5em;
+font-size:0.7em;
 }
 
 .add_button .editor_field {
-  width: 12em;
+width:12em;
 }
 
 .delete_button {
-  float: right;
+float:right;
 }
 
 .todo_detail p {
-  font-size: 0.9em;
-  padding: 0.3em;
+font-size:0.9em;
+padding:0.3em;
 }
 
 .todo_detail p:first-child {
-  font-weight: bold;
-  font-size: 0.8em;
+font-weight:700;
+font-size:0.8em;
 }
