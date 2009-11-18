@@ -1,4 +1,4 @@
-<div class="add_button">
+﻿<div class="add_button">
 <div id="insert_item">Neuer Eintrag</div>
 </div>
 <?php
@@ -25,7 +25,9 @@ if ($todo->todo_archived == 1) {
         'ajax_todo_srv.php?action=insert_item&project_id=<?php echo $template->project_id; ?>', {
             submitOnBlur: false,
             okControl: "button",
-            cancelControl: false,
+            okText: "✓",
+            cancelControl: "button",
+            cancelText: "✗",
             onComplete: function(){
                 loadList(<?php echo $template->project_id; ?>);
                 new Effect.Highlight('listContainer',{})

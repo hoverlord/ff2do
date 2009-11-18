@@ -56,18 +56,25 @@ padding:0.3em;
 font-size:0.9em;
 }
 
-.inplaceeditor-form .editor_field {
-font-size:1em;
-}
-
-.inplaceeditor-form a {
-margin-left:0.5em;
-font-size:0.7em;
-}
-
 .add_button .editor_field {
-width:10em;
-margin-right:1em;
+width:8.75em;
+margin-right:0.5em;
+}
+
+.editor_field {
+font-size:1.1em;
+border:1px solid silver;
+}
+
+.editor_ok_button,
+.editor_cancel_button {
+width:1.75em;
+border:1px solid silver;
+background-color:white;
+}
+
+.editor_ok_button {
+margin-right:0.5em;
 }
 
 .delete_button {

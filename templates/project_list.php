@@ -1,11 +1,13 @@
-<div class="add_button"><div id="insert_project">Neues Projekt</div></div>
+﻿<div class="add_button"><div id="insert_project">Neues Projekt</div></div>
 <script type="text/javascript">
     new Ajax.InPlaceEditor(
         'insert_project', 
         'ajax_project_srv.php?action=insert_project', {
             submitOnBlur: false,
             okControl: "button",
-            cancelControl: false,
+            okText: "✓",
+            cancelControl: "button",
+            cancelText: "✗",
             onComplete: function(){
                 loadProjects();
                     new Effect.Highlight('projectContainer',{})
