@@ -199,3 +199,11 @@ delete_project = function(project_id) {
         }
     );
 }
+
+function make_selected(el) {
+    var prev = $('projectContainer').getElementsByClassName('selected');
+    for(i=0;i<prev.length;i++) {  
+        prev[i].removeClassName('selected');
+    }
+    el.addClassName('selected');
+}

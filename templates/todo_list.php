@@ -34,4 +34,5 @@ if ($todo->todo_archived == 1) {
             }
         }
     );
+    make_selected($('project_<?php echo $template->project_id; ?>'));
 </script>
