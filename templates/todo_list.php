@@ -24,9 +24,9 @@ if ($todo->todo_archived == 1) {
         'insert_item', 
         'ajax_todo_srv.php?action=insert_item&project_id=<?php echo $template->project_id; ?>', {
             submitOnBlur: false,
-            okControl: "button",
+            okControl: "link",
             okText: "✓",
-            cancelControl: "button",
+            cancelControl: "link",
             cancelText: "✗",
             onComplete: function(){
                 loadList(<?php echo $template->project_id; ?>);

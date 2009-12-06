@@ -4,9 +4,9 @@
         'insert_project', 
         'ajax_project_srv.php?action=insert_project', {
             submitOnBlur: false,
-            okControl: "button",
+            okControl: "link",
             okText: "✓",
-            cancelControl: "button",
+            cancelControl: "link",
             cancelText: "✗",
             onComplete: function(){
                 loadProjects();
