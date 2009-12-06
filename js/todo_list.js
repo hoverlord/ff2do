@@ -201,7 +201,7 @@ delete_project = function(project_id) {
 }
 
 function make_selected(el) {
-    var prev = $('projectContainer').getElementsByClassName('selected');
+    var prev = $(el.parentNode.id).getElementsByClassName('selected');
     for(i=0;i<prev.length;i++) {  
         prev[i].removeClassName('selected');
     }

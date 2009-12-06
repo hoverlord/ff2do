@@ -37,5 +37,6 @@ if ($template->todo->todo_text != '') {
 		    }
         }
     );
+    make_selected($('item_<?php echo $template->todo->todo_id; ?>'));
 </script>
 </div>
