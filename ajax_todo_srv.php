@@ -5,6 +5,8 @@ require_once('includes/classes/todo_mapper.php');
 require_once('includes/classes/project_mapper.php');
 require_once('includes/classes/template_service.php');
 
+session_start();
+
 switch ($_GET['action']) {
         
     case 'get_list':
@@ -59,6 +61,17 @@ switch ($_GET['action']) {
     case 'archive_item':
         TodoMapper::archiveTodo(str_replace('archive_item_', '', $_POST['id']));
         break;
-        
+    
+    case 'toggle_completed_todos':
+        if (isset($_SESSION['displayCompletedTodos'])) {
+            if ($_SESSION['displayCompletedTodos'] == true) {
+                $_SESSION['displayCompletedTodos'] = false;
+            } else {
+                $_SESSION['displayCompletedTodos'] = true;
+            }
+        } else {
+            $_SESSION['displayCompletedTodos'] = false;
+        }
+        break;
 }
 ?>

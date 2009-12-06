@@ -1,3 +1,5 @@
+/* General Styling */
+
 * {
 margin:0;
 padding:0;
@@ -23,6 +25,54 @@ width:47.5em;
 margin:5em auto auto;
 }
 
+/* Suckerfish Navigation */
+
+#nav {
+float:left;
+}
+
+#nav,
+#nav ul {
+padding:0;
+margin:0;
+list-style:none;
+}
+
+#nav a {
+display:block;
+margin:0.3em 0 0 0;
+color:#333333;
+text-decoration:none;
+}
+
+#nav li {
+float:left;
+margin-left:0.3em;
+}
+
+#nav li ul {
+position: absolute;
+width:17em;
+left:-999em;
+z-index:99;
+font-size:12px;
+background:white;
+border-top:1px solid #DDD;
+border-bottom:1px solid #DDD;
+}
+
+#nav li ul li {
+margin-left:0.6em;
+padding:0.3em 0 0.3em 0;
+}
+
+#nav li:hover ul,
+#nav li.sfhover ul {
+left: auto;
+}
+
+/* Containers */
+
 #projectContainer {
 float:left;
 width:12.5em;
@@ -39,6 +89,8 @@ float:left;
 width:22.5em;
 }
 
+/* List Items */
+
 .todo_item {
 border-bottom:1px solid #DDD;
 background-color:#FFF;
@@ -46,28 +98,18 @@ cursor:move;
 margin:0.3em;
 }
 
-.todo_detail {
-border:1px solid silver;
-background-color:#FFF;
-margin:0.3em;
-padding:0.3em;
-}
-
 .add_button {
 height:21px;
 border-bottom:1px solid #DDD;
 margin:0.3em;
 background-color:#eee;
-
 }
 
 .add_button div {
 padding:0 0 2px 0.2em;
 }
 
-#listContainer .todo_item {
-}
-
+/* Inplace Editor */
 
 .editor_ok_link,
 .editor_cancel_link,
@@ -109,6 +151,15 @@ padding-left:8px;
 .editor_cancel_link {
 color:red;
 padding-left:10px;
+}
+
+/* Detail Container Items */
+
+.todo_detail {
+border:1px solid silver;
+background-color:#FFF;
+margin:0.3em;
+padding:0.3em;
 }
 
 .delete_button {

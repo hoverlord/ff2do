@@ -4,6 +4,8 @@ require_once('includes/config.php');
 require_once('includes/classes/project_mapper.php');
 require_once('includes/classes/template_service.php');
 
+session_start();
+
 switch ($_GET['action']) {
     
     case 'update_project_list':

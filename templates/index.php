@@ -9,13 +9,23 @@
 </head>
 <body>
 <div id="page_wrapper">
-<div id="projectContainer">
-</div>
-<div id="listContainer"></div>
-<div id="viewer_container">
-<div id="todo_viewer"></div>
-</div>
-<div style="clear: left;"></div>
+    <ul id="nav">
+    	<li>
+    	    <a href="#">Optionen</a>
+    		<ul>
+    			<li><input type="checkbox" onChange="toggleCompletedProjects()" <?php if (isset($_SESSION['displayCompletedProjects']) AND $_SESSION['displayCompletedProjects'] == 1) {echo ' checked';}?>>&nbsp;erledigte Projekte verbergen</li>
+    			<li><input type="checkbox" onChange="toggleCompletedTodos()" <?php if (isset($_SESSION['displayCompletedTodos']) AND $_SESSION['displayCompletedTodos'] == 1) {echo ' checked';}?>>&nbsp;erledigte Aufgaben verbergen</li>
+    		</ul>
+    	</li>
+    </ul>
+    <div style="clear: left;"></div>
+    <div id="projectContainer">
+    </div>
+    <div id="listContainer"></div>
+    <div id="viewer_container">
+    <div id="todo_viewer"></div>
+    </div>
+    <div style="clear: left;"></div>
 </div>
 </body>
 </html>

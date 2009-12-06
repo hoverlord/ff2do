@@ -5,8 +5,12 @@ require_once('includes/classes/database.php');
 class TodoMapper {
 
     public function getTodoList($project_id) {
+        $where = '';
+        if (isset($_SESSION['displayCompletedTodos']) AND $_SESSION['displayCompletedTodos'] === false) {
+            $where .= ' AND todo_archived = "0" ';
+        }
         $db_link = new Database();
-        $sql = 'SELECT todo_name, todo_id, todo_archived, project_id FROM todos WHERE project_id = "' . $project_id . '" ORDER BY todo_sort_order';
+        $sql = 'SELECT todo_name, todo_id, todo_archived, project_id FROM todos WHERE project_id = "' . $project_id . '"' . $where . ' ORDER BY todo_sort_order';
         $list = $db_link->query($sql)->fetchAll();
         return $list;
     }

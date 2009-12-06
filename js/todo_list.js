@@ -85,7 +85,7 @@ delete_item = function(id, project_id) {
 }
 
 archiveItem = function(id, project_id) {
-var params = 'id='+id;
+    var params = 'id='+id;
     var url = 'ajax_todo_srv.php?action=archive_item';
     var ajax = new Ajax.Request(
         url, {
@@ -93,6 +93,23 @@ var params = 'id='+id;
 			parameters: params,
 			onComplete: function(){
 				loadList(project_id);
+				new Effect.Fade(
+				    'todo_viewer', {
+				        duration: 0.2
+				    }
+				);
+			}
+        }
+    );
+}
+
+toggleCompletedTodos = function() {
+    var url = 'ajax_todo_srv.php?action=toggle_completed_todos';
+    var ajax = new Ajax.Request(
+        url, {
+            method: 'post',
+			onComplete: function(){
+				loadList();
 				new Effect.Fade(
 				    'todo_viewer', {
 				        duration: 0.2
