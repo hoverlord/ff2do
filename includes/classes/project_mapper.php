@@ -5,8 +5,12 @@ require_once('includes/classes/database.php');
 class ProjectMapper {
     
     public function getProjectList() {
+        $where = '';
+        if (isset($_SESSION['displayCompletedProjects']) AND $_SESSION['displayCompletedProjects'] === false) {
+            $where .= ' WHERE project_archived = "0"';
+        }
         $db_link = new Database();
-        $sql = 'SELECT project_id, project_name FROM projects ORDER BY project_sort_order';
+        $sql = 'SELECT project_id, project_name, project_archived FROM projects' . $where . ' ORDER BY project_sort_order';
         $projects = $db_link->query($sql)->fetchAll();
         return $projects;
     }
@@ -55,6 +59,16 @@ class ProjectMapper {
         $project_id = $db_link->query($sql)->fetch()->project_id;
         return $project_id;
     }
-
+    
+    public function archiveProject($id) {
+        $db_link = new Database();
+        $sql = 'SELECT project_archived FROM projects WHERE project_id = "' . (int)$id . '"';
+        $toggle = 1;
+        if ($db_link->query($sql)->fetch()->project_archived == 1) {
+            $toggle = 0;
+        }
+        $sql = 'UPDATE projects SET project_archived = ' . $toggle . ' WHERE project_id = "' . (int)$id . '"';
+        $db_link->exec($sql);
+    }
 }
 ?>

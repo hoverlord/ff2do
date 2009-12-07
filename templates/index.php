@@ -13,8 +13,8 @@
     	<li>
     	    <a href="#">Optionen</a>
     		<ul>
-    			<li><input type="checkbox" onChange="toggleCompletedProjects()" <?php if (isset($_SESSION['displayCompletedProjects']) AND $_SESSION['displayCompletedProjects'] == 1) {echo ' checked';}?>>&nbsp;erledigte Projekte verbergen</li>
-    			<li><input type="checkbox" onChange="toggleCompletedTodos()" <?php if (isset($_SESSION['displayCompletedTodos']) AND $_SESSION['displayCompletedTodos'] == 1) {echo ' checked';}?>>&nbsp;erledigte Aufgaben verbergen</li>
+    			<li><input type="checkbox" name="toggle_completed_projects" onChange="toggleCompletedProjects(this)" <?php if (isset($_SESSION['displayCompletedProjects']) AND $_SESSION['displayCompletedProjects'] == 1) {echo ' checked';}?>>&nbsp;erledigte Projekte verbergen</li>
+    			<li><input type="checkbox" name="toggle_completed_todos" onChange="toggleCompletedTodos(this)" <?php if (isset($_SESSION['displayCompletedTodos']) AND $_SESSION['displayCompletedTodos'] == 1) {echo ' checked';}?>>&nbsp;erledigte Aufgaben verbergen</li>
     		</ul>
     	</li>
     </ul>

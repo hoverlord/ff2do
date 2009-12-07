@@ -18,7 +18,7 @@ if ($template->todo->todo_text != '') {
 <script type="text/javascript">
     new Ajax.InPlaceEditor(
         'name_<?php echo $template->todo->todo_id; ?>', 
-        'ajax_todo_srv.php?action=set_item&id=<?php echo $template->todo->todo_id; ?>&project_id=<?php echo $template->todo->project_id; ?>', {
+        'ajax_srv.php?action=set_item&id=<?php echo $template->todo->todo_id; ?>&project_id=<?php echo $template->todo->project_id; ?>', {
             submitOnBlur: true,
             onComplete: function(){
 			    loadList(<?php echo $template->todo->project_id; ?>);
@@ -28,7 +28,7 @@ if ($template->todo->todo_text != '') {
     );
     new Ajax.InPlaceEditor(
         'text_<?php echo $template->todo->todo_id; ?>', 
-        'ajax_todo_srv.php?action=set_item_text&id=<?php echo $template->todo->todo_id; ?>&project_id=<?php echo $template->todo->project_id; ?>', {
+        'ajax_srv.php?action=set_item_text&id=<?php echo $template->todo->todo_id; ?>&project_id=<?php echo $template->todo->project_id; ?>', {
             rows: 7,
             cols: 27,
             submitOnBlur: true,

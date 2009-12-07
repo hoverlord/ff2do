@@ -22,7 +22,7 @@ if ($todo->todo_archived == 1) {
 <script type="text/javascript">
     new Ajax.InPlaceEditor(
         'insert_item', 
-        'ajax_todo_srv.php?action=insert_item&project_id=<?php echo $template->project_id; ?>', {
+        'ajax_srv.php?action=insert_item&project_id=<?php echo $template->project_id; ?>', {
             submitOnBlur: false,
             okControl: "link",
             okText: "✓",
