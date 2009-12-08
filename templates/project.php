@@ -1,6 +1,5 @@
 <div class="todo_detail">
 <p id="name_<?php echo $template->project->project_id; ?>"><?php echo utf8_decode($template->project->project_name); ?></p>
-<p>Sortierung: <?php echo $template->project->project_sort_order; ?></p>
 <input type="checkbox" id="archive_project_<?php echo $template->project->project_id; ?>" 
     onChange="archiveProject(this.id)"
     <?php if ($template->project->project_archived == 1) {echo ' checked';}?>> erledigt
